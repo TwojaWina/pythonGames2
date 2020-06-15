@@ -148,7 +148,7 @@ while missedGuess < 6:
     userGuess = input()
 #    tries += 1
 
-#print('you guessed', alreadyGuessed, 'and the secret is', secret)
+#print('you guessed', alreadyGuessed, 'and the secret is', secret,'adding a test line for github')
 if checkComplete(mask) == False:
     print('Sorry you lose! your final result is ', end=' ')
     printMask(mask)

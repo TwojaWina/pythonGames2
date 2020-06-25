@@ -88,12 +88,12 @@ def checkComplete(mask):
 #print('please enter a secret word.\n')
 #secret = input()
 
-print('Randomly picking a word from Shakespeare, And you have SEVEN chance to guess the letters in the word')
-quote = 'full fathom five thy father lies of his bones are coral made those are pearls that were his eyes nothing of him that doth fade but doth suffer a sea-change into something rich and strange'
-sequence = quote.lower().split()
-secret = random.choice(sequence)
+#print('Randomly picking a word from Shakespeare, And you have SEVEN chance to guess the letters in the word')
+#quote = 'full fathom five thy father lies of his bones are coral made those are pearls that were his eyes nothing of him that doth fade but doth suffer a sea-change into something rich and strange'
+#sequence = quote.lower().split()
+#secret = random.choice(sequence)
 
-#secret = 'here'
+secret = 'here'
 secretChars = list(secret)
 secretLen = len(secret)
 
@@ -113,7 +113,7 @@ isRepeat = False
 #guess, alreadyGuessed, isRepeat = checkRepeat(userGuess, alreadyGuessed)
 
 #tries = 0
-while missedGuess < 6:
+while missedGuess < 5:
     guess, alreadyGuessed, isRepeat = checkRepeat(userGuess, alreadyGuessed)
     while isRepeat is True:
 #        os.system('clear')
@@ -135,7 +135,7 @@ while missedGuess < 6:
         print()
     else:
         missedGuess += 1
-        print('Sorry, you still have', 7-missedGuess,'chance(s).')
+        print('Sorry, you still have', 6-missedGuess,'chance(s).')
         printHangman(missedGuess)
         printMask(mask)
         print()
@@ -153,4 +153,5 @@ if checkComplete(mask) == False:
     print('Sorry you lose! your final result is ', end=' ')
     printMask(mask)
     print()
+    printHangman(6)
     print('The secret word is :',secret)
